@@ -10,6 +10,9 @@
 
 if (!defined('IN_GS')) { die('You cannot load this page directly.'); }
 
+// Add $i18n_m for i18n lang files in Modules
+$i18n_m = dash_module_i18n('simpleblog');
+
 $uid = 'sbp_' . substr(md5(__FILE__), 0, 6);
 
 global $live_plugins;
@@ -111,23 +114,23 @@ if ($db_ok) {
 
 <div id="<?php echo $uid ?>">
     <div class="sb-header">
-        <h3><svg xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 21q-.825 0-1.412-.587T2 19V3l1.675 1.675L5.325 3L7 4.675L8.675 3l1.65 1.675L12 3l1.675 1.675L15.325 3L17 4.675L18.675 3l1.65 1.675L22 3v16q0 .825-.587 1.413T20 21zm0-2h7v-6H4zm9 0h7v-2h-7zm0-4h7v-2h-7zm-9-4h16V8H4z"/></svg> Simple Blog</h3>
-        <a class="sb-btn sb-btn-new" href="load.php?id=simpleBlog&blog_admin&tab=add_post">+ New Post</a>
+        <h3><svg xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 21q-.825 0-1.412-.587T2 19V3l1.675 1.675L5.325 3L7 4.675L8.675 3l1.65 1.675L12 3l1.675 1.675L15.325 3L17 4.675L18.675 3l1.65 1.675L22 3v16q0 .825-.587 1.413T20 21zm0-2h7v-6H4zm9 0h7v-2h-7zm0-4h7v-2h-7zm-9-4h16V8H4z"/></svg> <?php echo $i18n_m('sb_lang_Simple_Blog'); ?></h3>
+        <a class="sb-btn sb-btn-new" href="load.php?id=simpleBlog&blog_admin&tab=add_post">+ <?php echo $i18n_m('sb_lang_New_Post'); ?></a>
     </div>
 
     <?php if (!$plugin_ok): ?>
-        <p class="sb-missing">⚠ SimpleBlog plugin is not active.</p>
+        <p class="sb-missing">⚠ <?php echo $i18n_m('sb_lang_plugin_not_active'); ?>.</p>
     <?php elseif (!$db_ok): ?>
-        <p class="sb-missing">⚠ SimpleBlog database not found.</p>
+        <p class="sb-missing">⚠ <?php echo $i18n_m('sb_lang_no_db_found'); ?>.</p>
     <?php elseif (empty($posts)): ?>
-        <p class="sb-empty">No posts found.</p>
+        <p class="sb-empty"><?php echo $i18n_m('sb_lang_No_posts_found'); ?>.</p>
     <?php else: ?>
     <table class="sb-table">
         <tr>
             <th>Title</th>
             <th>Date</th>
             <th>Status</th>
-            <th style="text-align:center;">Action</th>
+            <th style="text-align:center;"><?php echo $i18n_m('sb_lang_Action'); ?></th>
         </tr>
         <?php foreach ($posts as $post):
             $title   = htmlspecialchars($post['title']);
@@ -139,9 +142,9 @@ if ($db_ok) {
             <td class="sb-date"><?php echo $date; ?></td>
             <td>
                 <?php if ($post['published']): ?>
-                    <span class="sb-badge sb-badge-pub">Published</span>
+                    <span class="sb-badge sb-badge-pub"><?php echo $i18n_m('sb_lang_Published'); ?></span>
                 <?php else: ?>
-                    <span class="sb-badge sb-badge-draft">Draft</span>
+                    <span class="sb-badge sb-badge-draft"><?php echo $i18n_m('sb_lang_Draft'); ?></span>
                 <?php endif; ?>
             </td>
             <td class="sb-actions" style="text-align:center;">

@@ -2,12 +2,16 @@
 
 $i18n = [
 
-	'lang_Galleries'	=>	'Galleries',
-	'lang_Title'		=>	'Title',
-	'lang_Action'		=>	'Action',
-	'lang_Edit'			=>	'Edit',
+	'sb_lang_Simple_Blog'		=>	'Simple Blog',
+	'sb_lang_New_Post'			=>	'New Post',
 	
-	'lang_No_galleries'	=>	'No galleries found',
-	'lang_plugin_not_active'	=>	'Monster Gallery plugin is not active',
+	'sb_lang_Action'			=>	'Action',
+	'sb_lang_Published'		=>	'Published',
+	'sb_lang_Draft'			=>	'Draft',
+	
+	
+	'sb_lang_plugin_not_active'=>	'SimpleBlog plugin is not active.',
+	'sb_lang_no_db_found'		=>	'SimpleBlog database not found.',
+	'sb_lang_No_posts_found'	=>	'No posts found.',
 	
 ];
