@@ -127,9 +127,9 @@ if ($db_ok) {
     <?php else: ?>
     <table class="sb-table">
         <tr>
-            <th>Title</th>
-            <th>Date</th>
-            <th>Status</th>
+            <th><?php echo $i18n_m('sb_lang_Title'); ?></th>
+            <th><?php echo $i18n_m('sb_lang_Date'); ?></th>
+            <th><?php echo $i18n_m('sb_lang_Status'); ?></th>
             <th style="text-align:center;"><?php echo $i18n_m('sb_lang_Action'); ?></th>
         </tr>
         <?php foreach ($posts as $post):
