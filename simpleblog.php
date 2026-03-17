@@ -93,7 +93,7 @@ if ($db_ok) {
     font-weight: 600;
 }
 #<?php echo $uid ?> .sb-badge-pub   { background: #d4edda; color: #28a745; }
-#<?php echo $uid ?> .sb-badge-draft { background: #f8f9fa; color: #aaa; border: 1px solid #eee; }
+#<?php echo $uid ?> .sb-badge-draft { background: #FFFF99; color: #CDA400; }
 #<?php echo $uid ?> .sb-empty { color: #bbb; font-style: italic; text-align: center; padding: 16px; }
 #<?php echo $uid ?> .sb-missing {
     color: #856404;
