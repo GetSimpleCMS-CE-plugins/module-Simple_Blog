@@ -93,7 +93,7 @@ if ($db_ok) {
     font-weight: 600;
 }
 #<?php echo $uid ?> .sb-badge-pub   { background: #d4edda; color: #28a745; }
-#<?php echo $uid ?> .sb-badge-draft { background: #f8f9fa; color: #aaa; border: 1px solid #eee; }
+#<?php echo $uid ?> .sb-badge-draft { background: #FFFF99; color: #CDA400; }
 #<?php echo $uid ?> .sb-empty { color: #bbb; font-style: italic; text-align: center; padding: 16px; }
 #<?php echo $uid ?> .sb-missing {
     color: #856404;
@@ -135,7 +135,7 @@ if ($db_ok) {
         <?php foreach ($posts as $post):
             $title   = htmlspecialchars($post['title']);
             $date    = date('Y-m-d', $post['date']);
-            $editUrl = 'load.php?id=simpleBlog&blog_admin&tab=add_post&edit=' . (int)$post['id'];
+            $editUrl = 'load.php?id=simpleBlog&blog_admin&tab=edit_post&post_id=' . (int)$post['id'];
         ?>
         <tr>
             <td class="sb-title" title="<?php echo $title; ?>"><?php echo $title; ?></td>
